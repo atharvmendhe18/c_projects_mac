@@ -1,0 +1,12 @@
+Problems on Strings
+
+1. 	Write a program to shift the elements of a single dimensional array in the right direction
+	by one position. 
+	If the given array is [76 35 43 22] then after execution, the program should be [22 76 35 43]
+
+2. 	Write a program to reverse a sentence (DO NOT REVERSE THE WORDS)
+
+3.	Write a program to calculate sum of list by passing an array to a function.
+
+
+

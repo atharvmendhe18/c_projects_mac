@@ -1,0 +1,9 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/atharvmendhe/Documents/c_projects/Second_Year/Search/binary_search'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _binary_search, symObjAddr: 0x0, symBinAddr: 0x100003D14, symSize: 0x16C }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _array, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x69, size: 0x8, addend: 0x0, symName: _binary_search, symObjAddr: 0x0, symBinAddr: 0x100003D14, symSize: 0x16C }
+  - { offsetInCU: 0xC9, offset: 0xC9, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x16C, symBinAddr: 0x100003E80, symSize: 0xC4 }
+...

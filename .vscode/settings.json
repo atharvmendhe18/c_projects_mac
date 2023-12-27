@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "__locale": "c",
+        "__string": "c",
+        "POSTFI_1.C": "cpp",
+        "stdlib.h": "c",
+        "stdio.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

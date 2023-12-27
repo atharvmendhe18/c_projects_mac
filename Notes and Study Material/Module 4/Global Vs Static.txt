@@ -1,0 +1,25 @@
+WHAT IS DIFFERENCE BETWEEN GLOBAL AND STATIC VARIABLES IN C ?
+
+Whenever we declare a variable we declare its storage and its data type , it’s scope is determined by where we declare it.
+
+Global variables are declared outside of all functions. Global variables are stored in Data Segment of process. Global variable’s life is until the life of program and it can be accessed by other files using extern keyword.
+
+Static variable can be declared outside of all functions or within a function using static keyword before the data type of variable . If static variables are declared outside of all functions it will have global scope or it is declared within a function it will have scope within a function and it will retain until the life of program. Static variables are initialized only once at the time of declaration only. Static variables are not accessible by other files using extern keywords.
+
+
+#include <stdio.h>
+int result = 100;
+
+int main()
+{
+    int result = 20;
+
+    {
+        extern int result;
+        printf("Global result = %d\n",result);
+    }
+    
+    printf("result in main = %d\n", result);
+}
+
+

@@ -1,0 +1,47 @@
+Problems on Strings
+
+1. 	Write a program to shift the elements of a single dimensional array in the right direction
+	by one position. 
+	If the given array is [76 35 43 22] then after execution, the program should be [22 76 35 43]
+
+2. 	Write a program to reverse a sentence (DO NOT REVERSE THE WORDS)
+
+3.	Write a program to calculate sum of list by passing an array to a function.
+
+
+
+Solution 1:
+
+#include<conio.h> 
+#include<stdio.h> 
+
+void main()
+{
+int n,i,a[100],temp;
+//clrscr(); 
+printf("Enter the number of elements:");
+scanf("%d",&n); 
+for(i=0;i<=n-1;i++)
+{
+printf("Enter a value"); 
+scanf("%d",&a[i]);
+} 
+temp=a[n-1]; 
+for(i=n-1;i>0;i--)
+{
+a[i]=a[i-1];
+}
+
+a[0]=temp;
+for(i=0;i<=n-1;i++)
+{
+printf("%d\t",a[i]);
+}
+getch();
+}
+
+
+Solution 2:
+
+
+

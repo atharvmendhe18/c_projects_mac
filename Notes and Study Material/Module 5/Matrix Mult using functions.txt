@@ -1,0 +1,74 @@
+C program to perform Matrix Multiplication using Function
+
+#include <stdio.h>
+// function to multiply two square matrix
+void multiplyMatrix(int a[10][10], int b[10][10], 
+              int c[10][10], int size)
+{
+  for(int i=0; i<size; i++)
+  {
+    for(int j=0; j<size; j++)
+    {
+      // assign 0
+      c[i][j] = 0;
+      for (int k = 0; k < size; k++)
+      {
+        // find product
+        c[i][j] += a[i][k] * b[k][j];
+      }
+    }
+  }
+}
+// function to read square matrix
+void readMatrix(int matrix[10][10], int size)
+{
+  for (int i = 0; i < size; i++)
+  {
+    for (int j = 0; j < size; j++)
+    {
+      scanf("%d", &matrix[i][j]);
+    }
+  }
+}
+// function to display square matrix
+void displayMatrix(int matrix[10][10], int size)
+{
+  for (int i = 0; i < size; ++i)
+  {
+    for (int j = 0; j < size; ++j)
+    {
+      printf("%d ", matrix[i][j]);
+    }
+    printf("\n"); // new line
+  }
+}
+// main function
+int main()
+{
+
+  // declare matrix matrix A, B, & C
+  int a[10][10]; // first matrix
+  int b[10][10]; // second matrix
+  int c[10][10]; // resultant matrix
+
+  // read the size of matrices
+  int size;
+  printf("Enter Order of Both Matrix,\n");
+  printf("Enter 2 for 2x2, 3 for 3x3 and e.t.c.: ");
+  scanf("%d", &size);
+
+  // read matrix A and B
+  printf("Enter Matrix-1 Elements: \n");
+  readMatrix(a, size);
+  printf("Enter Matrix-2 Elements: \n");
+  readMatrix(b, size);
+
+  // multiply both matrix A and B
+  multiplyMatrix(a, b, c, size);
+
+  // display resultant matrix
+  printf("Resultant Matrix: \n");
+  displayMatrix(c, size);
+
+  return 0;
+}

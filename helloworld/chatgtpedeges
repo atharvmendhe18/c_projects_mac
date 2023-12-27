@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define IMAGE_HEIGHT 100
+#define IMAGE_WIDTH 200
+
+int main(int argc, char *argv[])
+{
+    // Load image into a 2D array of pixels
+    int image[IMAGE_HEIGHT][IMAGE_WIDTH];
+
+    // Initialize variables for gradient calculation
+    int Gx, Gy, G;
+    int Gx_kernel[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy_kernel[3][3] = {{1, 2, 1}, {0, 0, 0}, {-1, -2, -1}};
+
+    // Loop through all pixels in the image
+    for (int i = 1; i < IMAGE_HEIGHT - 1; i++)
+    {
+        for (int j = 1; j < IMAGE_WIDTH - 1; j++)
+        {
+            // Initialize Gx and Gy to 0
+            Gx = 0;
+            Gy = 0;
+
+            // Convolve the kernel with the image
+            for (int k = -1; k <= 1; k++)
+            {
+                for (int l = -1; l <= 1; l++)
+                {
+                    Gx += image[i + k][j + l] * Gx_kernel[k + 1][l + 1];
+                    Gy += image[i + k][j + l] * Gy_kernel[k + 1][l + 1];
+                }
+            }
+
+            // Calculate the gradient magnitude
+            G = sqrt(pow(Gx, 2) + pow(Gy, 2));
+
+            // Threshold the gradient
+            if (G > THRESHOLD)
+            {
+                image[i][j] = 255;
+            }
+            else
+            {
+                image[i][j] = 0;
+            }
+        }
+    }
+
+    return 0;
+}
